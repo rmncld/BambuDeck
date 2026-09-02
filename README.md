@@ -30,6 +30,12 @@ The prototype has been tested on real hardware, not only with simulated data. Th
 
 Across the sequence, progress, temperatures, fan values and the active AMS slot change with the printer. The light key demonstrates the single implemented write command.
 
+### Animated demonstration
+
+<img src="./assets/bambudeck-demo.gif" alt="BambuDeck animated real-hardware demonstration" width="560">
+
+This optimized 30-second timelapse shows the interface evolving during a real P1S + AMS print: printer state, progress, temperatures, fan values, speed mode, AMS colors and the active tray indicator update over time.
+
 ## Setup and configuration
 
 | Stream Deck software integration | Configuration flow |
