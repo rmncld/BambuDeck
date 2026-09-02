@@ -47,6 +47,21 @@ The complete 53-second demonstration video will be linked here in its publicatio
 
 No start, pause, resume, stop, temperature, fan or motion command is part of the demonstrated control scope.
 
+## Dynamic visual language
+
+BambuDeck does not only replace numbers on static keys. The interface changes visually with the live printer state:
+
+- temperature and fan keys include a value-dependent color bar;
+- low or inactive values remain cool blue;
+- normal active values move to green;
+- higher fan levels progress through warmer accents, up to red at maximum output;
+- print progress updates both the percentage and its progress indicator;
+- the speed-mode key changes its label, symbol and accent for the reported mode;
+- the AMS view reproduces the reported slot colors;
+- the active AMS tray receives a visible ring.
+
+The photographs above show these changes on real hardware: for example, the fan bars move from blue at 0% to green, orange and red as their reported output increases. Exact visual thresholds remain implementation details until the release behaviour is finalized.
+
 ## How it works
 
 <p align="center">
@@ -76,7 +91,12 @@ These are development possibilities, not claims about the current public build:
 - additional Bambu Lab models after model-specific testing;
 - configurable layouts for different Stream Deck sizes;
 - multiple-printer profiles;
-- richer job and AMS detail pages;
+- richer job pages with file name, layer progress and remaining-time detail;
+- a dedicated AMS detail page for each tray;
+- detailed filament color and material information when reported by the printer;
+- AMS humidity level and internal temperature monitoring;
+- multi-AMS overview and navigation;
+- clearer empty, unavailable and third-party spool states;
 - optional safety-confirmed print controls;
 - reusable printer adapters for future hardware integrations.
 
