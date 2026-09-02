@@ -26,6 +26,8 @@ A value must not appear live when the printer is disconnected. Connection states
 
 Public documentation, screenshots and demonstration media must never expose printer credentials, access codes, local addresses or other connection secrets.
 
+The public setup screenshot therefore leaves the Network and Access fields empty while still demonstrating the real Property Inspector layout.
+
 ## Future commands
 
 Any additional control would require:
@@ -35,4 +37,3 @@ Any additional control would require:
 - confirmation for destructive actions;
 - hardware testing;
 - a clear fallback when the printer rejects or loses the command.
-
