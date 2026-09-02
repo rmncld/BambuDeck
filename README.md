@@ -22,11 +22,13 @@ The current working prototype connects locally to a **Bambu Lab P1S with AMS**, 
 
 ## Working proof
 
-The prototype has been tested on real hardware, not only with simulated data.
+The prototype has been tested on real hardware, not only with simulated data. These three photographs show the same physical interface reacting to different live printer states.
 
-| Real Stream Deck interface | What the demonstration proves |
-| --- | --- |
-| <img src="./assets/working-proof-square.jpg" alt="BambuDeck running on a real Stream Deck" width="360"> | Live connection state, printer status, print progress, temperatures, fan values, speed mode and AMS information are rendered on physical keys. The light key demonstrates the single implemented write command. |
+| Ready | Printing · 29% | Printing · 35% |
+| :---: | :---: | :---: |
+| <img src="./assets/state-ready.jpg" alt="BambuDeck ready state on a real Stream Deck" width="280"> | <img src="./assets/state-printing-29.jpg" alt="BambuDeck showing 29 percent print progress and live fan values" width="280"> | <img src="./assets/state-printing-35.jpg" alt="BambuDeck showing 35 percent print progress and the active AMS slot" width="280"> |
+
+Across the sequence, progress, temperatures, fan values and the active AMS slot change with the printer. The light key demonstrates the single implemented write command.
 
 The complete 53-second demonstration video will be linked here in its publication-ready version.
 
@@ -102,4 +104,3 @@ BambuDeck is currently presented as a **working private prototype and public tec
 ## Independence
 
 BambuDeck is an independent project. It is not affiliated with, endorsed by or sponsored by Bambu Lab or Elgato. Product and company names belong to their respective owners.
-
