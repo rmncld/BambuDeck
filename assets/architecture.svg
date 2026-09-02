@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">BambuDeck local architecture</title>
+  <desc id="desc">Telemetry flows from the P1S through local MQTT and the BambuDeck plugin to Stream Deck keys. Only the light command flows back.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#07111f"/><stop offset="1" stop-color="#102337"/></linearGradient>
+    <marker id="cyanArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0 0l10 5-10 5z" fill="#67e8f9"/></marker>
+    <marker id="greenArrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0l10 5-10 5z" fill="#4ade80"/></marker>
+  </defs>
+  <rect width="1200" height="1200" rx="72" fill="url(#bg)"/>
+  <text x="600" y="115" text-anchor="middle" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="58" font-weight="700">LOCAL ARCHITECTURE</text>
+  <text x="600" y="170" text-anchor="middle" fill="#67e8f9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="24" letter-spacing="3">CLEAR DATA AND COMMAND BOUNDARIES</text>
+  <g font-family="Inter,Segoe UI,Arial,sans-serif" text-anchor="middle">
+    <g transform="translate(355 245)">
+      <rect width="490" height="170" rx="28" fill="#10263a" stroke="#4b657d" stroke-width="4"/>
+      <text x="245" y="70" fill="#67e8f9" font-size="28" font-weight="700">STREAM DECK</text>
+      <text x="245" y="118" fill="#f8fafc" font-size="25">Dynamic physical-key views</text>
+    </g>
+    <g transform="translate(355 520)">
+      <rect width="490" height="190" rx="28" fill="#10263a" stroke="#4b657d" stroke-width="4"/>
+      <text x="245" y="64" fill="#67e8f9" font-size="28" font-weight="700">BAMBUDECK PLUGIN</text>
+      <text x="245" y="112" fill="#f8fafc" font-size="24">State normalization • Actions</text>
+      <text x="245" y="151" fill="#cbd5e1" font-size="22">TypeScript • Dynamic SVG</text>
+    </g>
+    <g transform="translate(355 830)">
+      <rect width="490" height="170" rx="28" fill="#10263a" stroke="#4b657d" stroke-width="4"/>
+      <text x="245" y="70" fill="#67e8f9" font-size="28" font-weight="700">BAMBU LAB P1S + AMS</text>
+      <text x="245" y="118" fill="#f8fafc" font-size="25">Local MQTT v5 connection</text>
+    </g>
+    <path d="M520 830V720" stroke="#67e8f9" stroke-width="9" marker-end="url(#cyanArrow)"/>
+    <path d="M520 520V425" stroke="#67e8f9" stroke-width="9" marker-end="url(#cyanArrow)"/>
+    <text x="315" y="780" fill="#67e8f9" font-size="24" font-weight="700">TELEMETRY</text>
+    <text x="304" y="475" fill="#67e8f9" font-size="24" font-weight="700">LIVE STATE</text>
+    <path d="M690 720V830" stroke="#4ade80" stroke-width="9" marker-end="url(#greenArrow)"/>
+    <text x="905" y="780" fill="#4ade80" font-size="24" font-weight="700">LIGHT ONLY</text>
+  </g>
+  <rect x="180" y="1060" width="840" height="4" rx="2" fill="#334155"/>
+  <text x="600" y="1128" text-anchor="middle" fill="#cbd5e1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="25">No cloud dependency claimed • No print control claimed</text>
+</svg>
