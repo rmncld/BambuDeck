@@ -32,9 +32,9 @@ Across the sequence, progress, temperatures, fan values and the active AMS slot 
 
 ### Animated demonstration
 
-<img src="./assets/bambudeck-demo.gif" alt="BambuDeck animated real-hardware demonstration" width="560">
+<img src="./assets/bambudeck-demo-enhanced.gif" alt="BambuDeck animated real-hardware demonstration" width="560">
 
-This optimized 30-second timelapse shows the interface evolving during a real P1S + AMS print: printer state, progress, temperatures, fan values, speed mode, AMS colors and the active tray indicator update over time.
+This optimized 36-second timelapse shows the interface evolving during a real P1S + AMS print: printer state, progress, temperatures, fan values, speed mode, AMS colors and the active tray indicator update over time.
 
 ## Setup and configuration
 
