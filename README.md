@@ -32,6 +32,14 @@ Across the sequence, progress, temperatures, fan values and the active AMS slot 
 
 The complete 53-second demonstration video will be linked here in its publication-ready version.
 
+## Setup and configuration
+
+| Stream Deck software integration | Configuration flow |
+| --- | --- |
+| <img src="./assets/setup-configuration.jpg" alt="BambuDeck setup panel inside the Stream Deck software" width="380"> | BambuDeck includes a dedicated Property Inspector inside the Stream Deck software. The current setup is organized into **Device**, **Network** and **Access** sections, with a visible readiness state. Connection secrets are deliberately absent from public media. |
+
+The interface allows the user to select the target printer and enter the local connection information required by that device. Once the configuration is usable, the action reports a clear **READY** state instead of leaving the connection status ambiguous.
+
 ## Current feature set
 
 | Area | Information displayed | Direction |
@@ -114,6 +122,7 @@ These are development possibilities, not claims about the current public build:
 
 - [Detailed feature behaviour](./docs/FEATURES.md)
 - [Technical architecture](./docs/ARCHITECTURE.md)
+- [Setup and configuration](./docs/CONFIGURATION.md)
 - [Safety and data boundaries](./docs/SAFETY.md)
 - [Development roadmap](./docs/ROADMAP.md)
 
