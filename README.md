@@ -30,12 +30,6 @@ The prototype has been tested on real hardware, not only with simulated data. Th
 
 Across the sequence, progress, temperatures, fan values and the active AMS slot change with the printer. The light key demonstrates the single implemented write command.
 
-### Video demonstration
-
-▶ **[Watch the complete 53-second real-hardware demonstration](./assets/bambudeck-demo.mp4)**
-
-The video shows BambuDeck reacting to the real P1S + AMS across changing printer states and values. It is demonstration media, not a simulated interface.
-
 ## Setup and configuration
 
 | Stream Deck software integration | Configuration flow |
