@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
+  <title id="title">BambuDeck</title>
+  <desc id="desc">Square project cover showing a Stream Deck telemetry interface.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#07111f"/>
+      <stop offset=".58" stop-color="#0b1627"/>
+      <stop offset="1" stop-color="#102337"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#4ade80"/>
+    </linearGradient>
+    <filter id="glow"><feGaussianBlur stdDeviation="18"/></filter>
+  </defs>
+  <rect width="1200" height="1200" rx="72" fill="url(#bg)"/>
+  <circle cx="160" cy="190" r="260" fill="#22d3ee" opacity=".08" filter="url(#glow)"/>
+  <circle cx="1050" cy="1010" r="300" fill="#4ade80" opacity=".07" filter="url(#glow)"/>
+  <g opacity=".13" stroke="#67e8f9" stroke-width="2">
+    <path d="M0 150h1200M0 300h1200M0 450h1200M0 600h1200M0 750h1200M0 900h1200M0 1050h1200"/>
+    <path d="M150 0v1200M300 0v1200M450 0v1200M600 0v1200M750 0v1200M900 0v1200M1050 0v1200"/>
+  </g>
+  <text x="600" y="180" text-anchor="middle" fill="#f8fafc" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="104" font-weight="750">BambuDeck</text>
+  <text x="600" y="244" text-anchor="middle" fill="#67e8f9" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28" font-weight="600" letter-spacing="4">LIVE PRINTER TELEMETRY</text>
+  <g transform="translate(150 340)">
+    <rect width="900" height="610" rx="64" fill="#070d16" stroke="#38516a" stroke-width="8"/>
+    <g fill="#10263a" stroke="#4b657d" stroke-width="4">
+      <rect x="55" y="55" width="135" height="135" rx="25"/><rect x="220" y="55" width="135" height="135" rx="25"/><rect x="385" y="55" width="135" height="135" rx="25"/><rect x="550" y="55" width="135" height="135" rx="25"/><rect x="715" y="55" width="135" height="135" rx="25"/>
+      <rect x="55" y="235" width="135" height="135" rx="25"/><rect x="220" y="235" width="135" height="135" rx="25"/><rect x="385" y="235" width="135" height="135" rx="25"/><rect x="550" y="235" width="135" height="135" rx="25"/><rect x="715" y="235" width="135" height="135" rx="25"/>
+      <rect x="55" y="415" width="135" height="135" rx="25"/><rect x="220" y="415" width="135" height="135" rx="25"/><rect x="385" y="415" width="135" height="135" rx="25"/><rect x="550" y="415" width="135" height="135" rx="25"/><rect x="715" y="415" width="135" height="135" rx="25"/>
+    </g>
+    <g font-family="Inter,Segoe UI,Arial,sans-serif" text-anchor="middle">
+      <path d="M102 122h32m-13-14 14 14-14 14" fill="none" stroke="#67e8f9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="287" y="93" fill="#67e8f9" font-size="18" font-weight="700">SPEED</text><text x="287" y="134" fill="#4ade80" font-size="19">STANDARD</text>
+      <text x="452" y="93" fill="#67e8f9" font-size="18" font-weight="700">P1S</text><text x="452" y="132" fill="#f8fafc" font-size="21">ONLINE</text><circle cx="452" cy="158" r="8" fill="#4ade80"/>
+      <text x="782" y="93" fill="#67e8f9" font-size="18" font-weight="700">AMS</text>
+      <rect x="741" y="122" width="17" height="38" rx="6" fill="#f8fafc"/><rect x="765" y="122" width="17" height="38" rx="6" fill="#4ade80"/><rect x="789" y="122" width="17" height="38" rx="6" fill="#fbbf24"/><rect x="813" y="122" width="17" height="38" rx="6" fill="#67e8f9"/>
+      <text x="122" y="273" fill="#67e8f9" font-size="18" font-weight="700">NOZZLE</text><text x="122" y="325" fill="#f8fafc" font-size="31">27°C</text>
+      <text x="452" y="273" fill="#67e8f9" font-size="18" font-weight="700">PRINT</text><text x="452" y="325" fill="#4ade80" font-size="25">READY</text>
+      <text x="782" y="273" fill="#67e8f9" font-size="18" font-weight="700">PART FAN</text><text x="782" y="325" fill="#f8fafc" font-size="31">0%</text>
+      <text x="122" y="453" fill="#67e8f9" font-size="18" font-weight="700">BED</text><text x="122" y="505" fill="#f8fafc" font-size="28">25°C</text>
+      <text x="287" y="453" fill="#67e8f9" font-size="18" font-weight="700">CHAMBER</text><text x="287" y="505" fill="#f8fafc" font-size="28">5°C</text>
+      <text x="452" y="453" fill="#67e8f9" font-size="18" font-weight="700">LIGHT</text><text x="452" y="505" fill="#4ade80" font-size="28">ON</text>
+      <text x="617" y="453" fill="#67e8f9" font-size="18" font-weight="700">CHAMBER FAN</text><text x="617" y="505" fill="#f8fafc" font-size="28">0%</text>
+      <text x="782" y="453" fill="#67e8f9" font-size="18" font-weight="700">AUX FAN</text><text x="782" y="505" fill="#f8fafc" font-size="28">0%</text>
+    </g>
+    <rect x="70" y="570" width="760" height="7" rx="4" fill="url(#accent)"/>
+  </g>
+  <text x="600" y="1052" text-anchor="middle" fill="#cbd5e1" font-family="Inter,Segoe UI,Arial,sans-serif" font-size="28">READ-MOSTLY • LOCAL-FIRST • HARDWARE-TESTED</text>
+</svg>
