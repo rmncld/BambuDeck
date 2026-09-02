@@ -30,7 +30,11 @@
 - Additional hardware profiles after testing
 - Alternative Stream Deck layouts
 - Multi-printer design
+- Detailed AMS tray pages
+- Filament color and material metadata
+- AMS humidity and temperature monitoring
+- Multi-AMS navigation
+- File, layer and extended job information
 - Carefully validated optional controls
 
 Roadmap items are intentions, not promises of availability.
-
