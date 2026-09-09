@@ -1,6 +1,6 @@
 # Feature behaviour
 
-This document separates demonstrated behaviour from future possibilities.
+This document describes the behaviour of the current **BambuDeck v1.2.0.0** Marketplace candidate.
 
 ## Connection state
 
@@ -12,6 +12,12 @@ BambuDeck exposes four connection-level views:
 - **disconnected** — the previously available printer cannot currently be reached.
 
 The connection view is deliberately explicit so stale values are not mistaken for live printer data.
+
+## Default profiles and navigation
+
+BambuDeck includes ready-to-use **Home**, **Print** and **AMS** Stream Deck profiles.
+
+The profiles are linked through BambuDeck navigation actions. The custom back action returns from the Print or AMS profile to Home while preserving the plugin's visual language instead of using Stream Deck's default black navigation arrow.
 
 ## Printer state
 
@@ -28,7 +34,7 @@ This normalized state is shared with the relevant keys so the interface stays co
 
 ## Print progress
 
-The print view presents:
+The print progress view presents:
 
 - current percentage;
 - estimated time remaining;
@@ -37,39 +43,79 @@ The print view presents:
 
 It is a telemetry view. It does not start, pause, resume or stop a print.
 
+## Print Preview
+
+The **Print Preview** action displays the image of the plate/model currently being printed when a usable preview is available.
+
+The current implementation:
+
+1. identifies the active print from printer telemetry;
+2. connects locally to the printer using read-only FTPS access;
+3. downloads the current `.gcode.3mf` archive from a supported printer-side path;
+4. extracts the preferred plate preview image from the archive metadata;
+5. caches the image for the current print;
+6. renders it directly on the Stream Deck key.
+
+If no preview is available, the action falls back to a clear `NO PRINT` state. Failed preview retrieval is retried conservatively rather than repeatedly hammering the printer.
+
+The preview feature is read-only and does not modify the print file or printer state.
+
+## Print job details
+
+Dedicated read-only actions expose additional job telemetry where the printer reports it:
+
+- **Job Name**;
+- **Print Layers** — current/total layer information;
+- **Print Speed Factor**.
+
+These actions complement the main progress view and do not control the active print.
+
 ## Temperatures
 
 Separate views display the reported:
 
 - nozzle temperature;
+- nozzle target temperature;
 - bed temperature;
+- bed target temperature;
 - chamber temperature.
 
-Temperatures are read from printer reports. BambuDeck does not change temperature targets.
+Temperature and target values are read from printer reports. BambuDeck does not change temperature targets.
 
-Each temperature key includes a dynamic accent bar. Its color changes with the displayed thermal state so a cold, active or higher value can be recognized before reading the number. Final release thresholds will be documented only after they are validated across supported printer models.
+Temperature keys use compact dynamic visual indicators so state changes can be recognized at a glance.
 
 ## Fans
 
-The prototype displays the reported values for:
+BambuDeck displays reported values for:
 
 - part-cooling fan;
 - auxiliary fan;
-- chamber fan.
+- chamber fan;
+- hotend fan.
 
-Raw fan values are normalized for a small percentage-based display. The prototype does not command fan speeds.
+Raw fan values are normalized for small physical-key displays. BambuDeck does not command fan speeds in v1.2.
 
-The fan bar also changes color with the reported output. The real-hardware gallery demonstrates blue at 0%, green at moderate output, orange at higher output and red at maximum output. This is an intensity indicator, not an alarm or safety classification.
+## Speed
 
-## Speed mode
+Two complementary views are available:
 
-The currently reported printer speed mode is converted into a concise physical-key view. This is monitoring only in the demonstrated scope.
+- **Speed Mode** — the currently reported printer speed profile;
+- **Print Speed Factor** — the reported speed factor value when available.
 
-The mode view changes its label, symbol and accent instead of showing every mode with the same static artwork.
+Both are monitoring-only in this release.
 
-## AMS
+## Printer diagnostics
 
-The AMS view represents:
+Additional diagnostic telemetry includes:
+
+- **Wi-Fi Signal**;
+- **Printer Error Codes**.
+
+These views report information exposed by the printer and do not replace Bambu Lab's own troubleshooting guidance.
+
+## AMS overview
+
+The AMS Colors view represents:
 
 - four material slots;
 - reported filament colors;
@@ -78,36 +124,45 @@ The AMS view represents:
 
 The active tray receives a visual highlight so the selected material can be recognized without opening the slicer.
 
-## Planned AMS detail views
+## AMS Slot
 
-The current compact AMS key is intended to become the entry point to richer monitoring views:
+The dedicated **AMS Slot** action can target an AMS/slot selection and expose slot-specific information in a compact key view.
 
-- one detailed view per tray;
-- exact reported filament color;
-- material and spool information when exposed by the printer;
-- empty and unavailable tray states;
-- active-tray state;
-- AMS humidity level;
-- AMS internal temperature;
-- navigation across multiple AMS units.
+Availability of individual fields depends on what the connected printer, AMS and spool report.
 
-These items are planned integrations. Their final availability depends on the data actually reported by each supported printer, AMS model and filament type. Third-party spools may expose less metadata than recognized spools.
+## AMS detail telemetry
 
-## Planned job detail views
+BambuDeck v1.2 includes dedicated read-only AMS actions for:
 
-Future read-only job views may include:
+- **AMS Humidity**;
+- **AMS Temperature**;
+- **AMS Filament Remaining**;
+- **AMS Filament Material**;
+- **AMS Filament Profile**;
+- **AMS Calibration Info**;
+- **AMS Drying Info**.
 
-- file or job name;
-- current and total layer;
-- expanded time-remaining information;
-- print-stage detail;
-- dedicated layouts for larger Stream Deck models.
+These actions expose available AMS telemetry without sending AMS control commands. Some values may be absent on unsupported AMS hardware or when a spool does not expose the relevant metadata.
 
 ## Chamber light
 
-The light view is the only bidirectional feature in the demonstrated prototype:
+The light view is the only bidirectional printer feature in the current release:
 
 - it reads and displays the reported chamber-light state;
 - a key press requests light ON or OFF.
 
-No other printer command is claimed by the current demonstration.
+No start, pause, resume, stop, temperature, fan, motion or AMS command is claimed by BambuDeck v1.2.
+
+## Visual behaviour
+
+BambuDeck uses dynamic SVG key rendering for its live interface. Depending on the action, keys can change:
+
+- values;
+- labels;
+- progress indicators;
+- accent bars;
+- connection-state visuals;
+- AMS colors and active-slot highlights;
+- print preview imagery.
+
+The goal is to keep the interface readable at Stream Deck key size while making state changes visible without opening another application.
