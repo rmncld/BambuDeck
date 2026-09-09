@@ -58,7 +58,7 @@ Navigation is already configured in the distributed profiles. The custom BambuDe
 BambuDeck is configured from its **Property Inspector** inside the Stream Deck software. The current setup is divided into **Device**, **Network** and **Access** sections.
 
 <p align="center">
-  <img src="./assets/v12-local-setup.jpg" alt="BambuDeck local Device Network Access configuration" width="872">
+  <img src="./assets/setup-configuration.jpg" alt="BambuDeck setup panel inside Stream Deck" width="650">
 </p>
 
 BambuDeck does **not** require the user to sign in to a Bambu Cloud account. The plugin connects directly to the printer over the local network using the printer's local connection details and LAN access code.
@@ -140,7 +140,7 @@ BambuDeck uses dynamic SVG rendering rather than static text-only keys:
 5. **Print Preview** can additionally use local read-only **FTPS** to retrieve the current `.gcode.3mf` and extract its plate image.
 6. The chamber-light action sends the only currently supported printer command.
 
-The implementation is written in **TypeScript**, uses the **Elgato Stream Deck SDK v2**, **MQTT v5**, and local **FTPS** for print-thumbnail retrieval.
+The implementation is written in **TypeScript**, **MQTT v5**, and local **FTPS** for print-thumbnail retrieval.
 
 ## Compatibility
 
