@@ -1,78 +1,127 @@
 <p align="center">
-  <img src="./assets/bambudeck-cover.svg" alt="BambuDeck — live 3D printer monitoring on Stream Deck" width="720">
+  <img src="./assets/bambudeck-cover.svg" alt="BambuDeck — Bambu Lab monitoring on Stream Deck" width="720">
 </p>
 
 <p align="center">
-  <strong>Live Bambu Lab printer telemetry, presented on a physical Stream Deck interface.</strong>
+  <strong>Live Bambu Lab printer and AMS telemetry directly on Stream Deck.</strong>
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Status-Working_prototype-4ADE80?style=for-the-badge" alt="Working prototype">
+  <img src="https://img.shields.io/badge/Version-1.2.0.0-4ADE80?style=for-the-badge" alt="Version 1.2.0.0">
   <img src="https://img.shields.io/badge/Tested-P1S_%2B_AMS-63E6FF?style=for-the-badge" alt="Tested with P1S and AMS">
-  <img src="https://img.shields.io/badge/Connection-Local_MQTT-334155?style=for-the-badge" alt="Local MQTT">
+  <img src="https://img.shields.io/badge/Connection-Local_MQTT_%2B_FTPS-334155?style=for-the-badge" alt="Local MQTT and FTPS">
 </p>
 
 ## What is BambuDeck?
 
-BambuDeck is an independent Stream Deck integration built to make essential 3D-printer information visible at a glance, without keeping a slicer or mobile application in the foreground.
+BambuDeck is an independent Stream Deck integration for Bambu Lab printers. It turns live printer, print-job and AMS information into compact physical-key displays so the most useful information remains visible without keeping Bambu Studio or a mobile app in the foreground.
 
-The current working prototype connects locally to a **Bambu Lab P1S with AMS**, receives live printer telemetry and turns that information into compact, dynamic key displays.
+Version **1.2.0.0** expands the original monitoring prototype into a much richer interface with dedicated **Home, Print and AMS profiles**, built-in navigation, detailed AMS telemetry and a live **Print Preview** action.
 
-> **Current safety scope:** BambuDeck reads printer data. The **only printer command currently implemented is chamber-light ON/OFF**.
+> **Safety scope:** BambuDeck is monitoring-first. The only printer command currently implemented is chamber-light ON/OFF. Print controls, temperature controls, fan controls and motion commands are not part of this release.
+
+## Highlights in v1.2
+
+- Ready-to-use **Home**, **Print** and **AMS** Stream Deck profiles.
+- Built-in profile navigation with a custom BambuDeck back button.
+- **Print Preview** showing the current model/plate image directly on a Stream Deck key.
+- Print job name, layer progress and speed factor.
+- Wi-Fi signal and printer error-code monitoring.
+- Nozzle and bed **target temperatures** in addition to live temperatures.
+- Hotend fan monitoring.
+- Expanded AMS telemetry: humidity, temperature, material, remaining filament, profile, calibration and drying information.
+- AMS slot view with configurable AMS/slot selection.
+- Existing live telemetry retained: printer status, progress, temperatures, fans, speed mode, AMS colors and active tray.
+
+## Print Preview
+
+One of the most distinctive additions in v1.2 is **Print Preview**.
+
+BambuDeck can retrieve the active print archive from the printer over the local network using read-only FTPS access, extract the plate preview image from the current `.gcode.3mf`, cache it, and render it directly on a Stream Deck key.
+
+That means the Stream Deck can show the actual model currently being printed rather than only a file name or percentage.
+
+The preview system is intentionally local and read-only. If no usable preview is available, the key falls back to a clear `NO PRINT` state instead of displaying stale artwork.
+
+## Ready-to-use profiles
+
+BambuDeck v1.2 includes three default profiles:
+
+| Profile | Purpose |
+| --- | --- |
+| **Home** | Main printer overview and entry point |
+| **Print** | Print progress, job information, layers, preview and related telemetry |
+| **AMS** | AMS colors, slots and detailed AMS information |
+
+Navigation is already configured in the distributed profiles. The custom BambuDeck back action returns from the Print or AMS profile to Home without relying on the default black Stream Deck navigation icon.
+
+## Current feature set
+
+| Area | Action / information | Direction |
+| --- | --- | --- |
+| Connection | Missing, connecting, ready and disconnected states | Printer → Deck |
+| Printer | Printer Status | Printer → Deck |
+| Printer | Wi-Fi Signal | Printer → Deck |
+| Printer | Printer Error Codes | Printer → Deck |
+| Print | Print Progress + estimated remaining time | Printer → Deck |
+| Print | Print Preview | Printer → Deck |
+| Print | Job Name | Printer → Deck |
+| Print | Print Layers | Printer → Deck |
+| Print | Print Speed Factor | Printer → Deck |
+| Temperature | Nozzle Temperature | Printer → Deck |
+| Temperature | Nozzle Target | Printer → Deck |
+| Temperature | Bed Temperature | Printer → Deck |
+| Temperature | Bed Target | Printer → Deck |
+| Temperature | Chamber Temperature | Printer → Deck |
+| Cooling | Part Fan Speed | Printer → Deck |
+| Cooling | Auxiliary Fan Speed | Printer → Deck |
+| Cooling | Chamber Fan Speed | Printer → Deck |
+| Cooling | Hotend Fan Speed | Printer → Deck |
+| Speed | Current Speed Mode | Printer → Deck |
+| AMS | AMS Colors + active tray highlight | Printer → Deck |
+| AMS | AMS Slot | Printer → Deck |
+| AMS | AMS Humidity | Printer → Deck |
+| AMS | AMS Temperature | Printer → Deck |
+| AMS | AMS Filament Remaining | Printer → Deck |
+| AMS | AMS Filament Material | Printer → Deck |
+| AMS | AMS Filament Profile | Printer → Deck |
+| AMS | AMS Calibration Info | Printer → Deck |
+| AMS | AMS Drying Info | Printer → Deck |
+| Control | Chamber Light | Deck ↔ Printer |
 
 ## Working proof
 
-The prototype has been tested on real hardware, not only with simulated data. These three photographs show the same physical interface reacting to different live printer states.
+BambuDeck is tested on real hardware, not only with simulated telemetry.
 
 | Ready | Printing · 29% | Printing · 35% |
 | :---: | :---: | :---: |
-| <img src="./assets/state-ready.jpg" alt="BambuDeck ready state on a real Stream Deck" width="280"> | <img src="./assets/state-printing-29.jpg" alt="BambuDeck showing 29 percent print progress and live fan values" width="280"> | <img src="./assets/state-printing-35.jpg" alt="BambuDeck showing 35 percent print progress and the active AMS slot" width="280"> |
-
-Across the sequence, progress, temperatures, fan values and the active AMS slot change with the printer. The light key demonstrates the single implemented write command.
+| <img src="./assets/state-ready.jpg" alt="BambuDeck ready state on a real Stream Deck" width="280"> | <img src="./assets/state-printing-29.jpg" alt="BambuDeck showing print progress and live fan values" width="280"> | <img src="./assets/state-printing-35.jpg" alt="BambuDeck showing print progress and active AMS slot" width="280"> |
 
 ### Animated demonstration
 
 <img src="./assets/bambudeck-demo-final.gif" alt="BambuDeck animated real-hardware demonstration" width="560">
 
-This optimized 36-second timelapse shows the interface evolving during a real P1S + AMS print: printer state, progress, temperatures, fan values, speed mode, AMS colors and the active tray indicator update over time.
+The demonstration shows live printer state, progress, temperatures, fan values, speed mode, AMS colors and active-tray changes during a real P1S + AMS print.
 
 ## Setup and configuration
 
 | Stream Deck software integration | Configuration flow |
 | --- | --- |
-| <img src="./assets/setup-configuration.jpg" alt="BambuDeck setup panel inside the Stream Deck software" width="380"> | BambuDeck includes a dedicated Property Inspector inside the Stream Deck software. The current setup is organized into **Device**, **Network** and **Access** sections, with a visible readiness state. Connection secrets are deliberately absent from public media. |
+| <img src="./assets/setup-configuration.jpg" alt="BambuDeck setup panel inside the Stream Deck software" width="380"> | BambuDeck includes a dedicated Property Inspector in Stream Deck. Printer model, local network address and access information are configured there. |
 
-The interface allows the user to select the target printer and enter the local connection information required by that device. Once the configuration is usable, the action reports a clear **READY** state instead of leaving the connection status ambiguous.
-
-## Current feature set
-
-| Area | Information displayed | Direction |
-| --- | --- | --- |
-| Connection | Missing, connecting, ready and disconnected states | Printer → Deck |
-| Printer state | Idle, printing, paused, error or unknown | Printer → Deck |
-| Print job | Progress and estimated remaining time | Printer → Deck |
-| Temperatures | Nozzle, bed and chamber values | Printer → Deck |
-| Cooling | Part, auxiliary and chamber fan values | Printer → Deck |
-| Speed | Current printer speed mode | Printer → Deck |
-| AMS | Slot colors, empty slots and active-tray highlight | Printer → Deck |
-| Chamber light | Current state plus ON/OFF action | Deck ↔ Printer |
-
-No start, pause, resume, stop, temperature, fan or motion command is part of the demonstrated control scope.
+Connection secrets are deliberately absent from public media and documentation examples.
 
 ## Dynamic visual language
 
-BambuDeck does not only replace numbers on static keys. The interface changes visually with the live printer state:
+BambuDeck uses dynamic SVG rendering rather than static text-only keys:
 
-- temperature and fan keys include a value-dependent color bar;
-- low or inactive values remain cool blue;
-- normal active values move to green;
-- higher fan levels progress through warmer accents, up to red at maximum output;
-- print progress updates both the percentage and its progress indicator;
-- the speed-mode key changes its label, symbol and accent for the reported mode;
-- the AMS view reproduces the reported slot colors;
-- the active AMS tray receives a visible ring.
-
-The photographs above show these changes on real hardware: for example, the fan bars move from blue at 0% to green, orange and red as their reported output increases. Exact visual thresholds remain implementation details until the release behaviour is finalized.
+- print progress updates both percentage and progress indicator;
+- temperature and fan keys use value-dependent accent bars;
+- speed mode changes its label, symbol and accent;
+- AMS colors reproduce reported spool colors;
+- the active AMS tray receives a visible highlight;
+- connection and missing-data states are visually distinct;
+- Print Preview renders the active plate image when available.
 
 ## How it works
 
@@ -81,46 +130,33 @@ The photographs above show these changes on real hardware: for example, the fan 
 </p>
 
 1. The plugin connects to the printer over the local network.
-2. MQTT reports are normalized into one predictable internal printer state.
+2. MQTT reports are normalized into one internal printer state.
 3. Each Stream Deck action subscribes only to the state it needs.
 4. Dynamic SVG views turn live values into readable physical-key interfaces.
-5. The chamber-light action sends the only currently supported command.
+5. Print Preview can additionally use local read-only FTPS to retrieve the current `.gcode.3mf` plate image.
+6. The chamber-light action sends the only currently supported printer command.
 
-The working implementation is written in **TypeScript**, uses the **Elgato Stream Deck SDK v2** and communicates through **MQTT v5**.
+The implementation is written in **TypeScript**, uses the **Elgato Stream Deck SDK v2**, **MQTT v5**, and local **FTPS** for print-thumbnail retrieval.
+
+## Compatibility
+
+The current hardware validation is performed on a **Bambu Lab P1S + AMS**.
+
+BambuDeck is designed around telemetry exposed by Bambu Lab printers and is intended to support models such as **A1, P1P, P1S and X1C**, but model-specific values and AMS capabilities can vary. Additional models should be considered compatible only after real-device validation.
 
 ## Design principles
 
-- **Glanceable:** the important value must remain readable on a small physical key.
+- **Glanceable:** useful information must remain readable on a small physical key.
 - **Local-first:** printer communication stays on the local network.
-- **State-driven:** every key reflects the printer state instead of displaying a static shortcut.
-- **Safe by default:** monitoring comes first; printer commands are added only when their behaviour and failure states are understood.
-- **Hardware-tested:** claims are based on the real P1S + AMS prototype shown above.
+- **State-driven:** each key reflects current printer data rather than a static shortcut.
+- **Monitoring-first:** write commands are deliberately limited.
+- **Hardware-tested:** published behaviour is validated on real equipment.
 
-## Possibilities
+## Project status
 
-These are development possibilities, not claims about the current public build:
+BambuDeck **v1.2.0.0** is the current Marketplace candidate build. The plugin has passed the Elgato CLI validation and packaging workflow and is being prepared for Marketplace review.
 
-- additional Bambu Lab models after model-specific testing;
-- configurable layouts for different Stream Deck sizes;
-- multiple-printer profiles;
-- richer job pages with file name, layer progress and remaining-time detail;
-- a dedicated AMS detail page for each tray;
-- detailed filament color and material information when reported by the printer;
-- AMS humidity level and internal temperature monitoring;
-- multi-AMS overview and navigation;
-- clearer empty, unavailable and third-party spool states;
-- optional safety-confirmed print controls;
-- reusable printer adapters for future hardware integrations.
-
-## Project maturity
-
-| Completed | In progress | Future validation |
-| --- | --- | --- |
-| Local P1S connection | Presentation and documentation | Additional printer models |
-| Live telemetry state | Distribution preparation | Multi-printer support |
-| Dynamic Stream Deck UI | Marketplace review material | Additional commands |
-| AMS visualization | Compatibility documentation | Public release scope |
-| Chamber-light toggle | Demo media | Long-term maintenance |
+This repository is the public technical showcase and documentation for BambuDeck. It does not publish the proprietary plugin source code.
 
 ## Documentation
 
@@ -129,10 +165,6 @@ These are development possibilities, not claims about the current public build:
 - [Setup and configuration](./docs/CONFIGURATION.md)
 - [Safety and data boundaries](./docs/SAFETY.md)
 - [Development roadmap](./docs/ROADMAP.md)
-
-## Status and availability
-
-BambuDeck is currently presented as a **working private prototype and public technical showcase**. This repository documents the product and its demonstrated behaviour; it does not currently publish the proprietary plugin source code or promise Marketplace availability.
 
 ## Independence
 
