@@ -43,10 +43,6 @@ Instead of seeing only a file name or percentage, the current model is visible b
 - AMS slot view with configurable AMS/slot selection.
 - Existing live telemetry retained: printer status, progress, temperatures, fans, speed mode, AMS colors and active tray.
 
-<p align="center">
-  <img src="./assets/v12-feature-grid.jpg" alt="BambuDeck v1.2 telemetry key artwork" width="800">
-</p>
-
 ## Ready-to-use profiles
 
 | Profile | Purpose |
