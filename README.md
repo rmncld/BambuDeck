@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="./assets/bambudeck-cover.svg" alt="BambuDeck — Bambu Lab monitoring on Stream Deck" width="720">
+  <img src="./assets/bambudeck-cover.png" alt="BambuDeck — Bambu Lab monitoring on Stream Deck" width="720">
 </p>
 
 <p align="center">
