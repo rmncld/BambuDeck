@@ -7,6 +7,16 @@
 </p>
 
 <p align="center">
+  <a href="https://marketplace.elgato.com/product/bambudeck-1279275e-0239-488d-b7b3-cca63f8a4c7f">
+    <img src="./assets/badges/get-it-on-marketplace.svg" alt="Get it on Marketplace" height="48">
+  </a>
+  &nbsp;&nbsp;
+  <a href="https://www.elgato.com/stream-deck">
+    <img src="./assets/badges/works-with-stream-deck.svg" alt="Works with Stream Deck" height="48">
+  </a>
+</p>
+
+<p align="center">
   <img src="https://img.shields.io/badge/Version-1.2.0.0-4ADE80?style=for-the-badge" alt="Version 1.2.0.0">
   <img src="https://img.shields.io/badge/Tested-P1S_%2B_AMS-63E6FF?style=for-the-badge" alt="Tested with P1S and AMS">
   <img src="https://img.shields.io/badge/Connection-Local_MQTT_%2B_FTPS-334155?style=for-the-badge" alt="Local MQTT and FTPS">
@@ -15,6 +25,8 @@
 ## What is BambuDeck?
 
 BambuDeck is an independent Stream Deck integration for Bambu Lab printers. It turns live printer, print-job and AMS information into compact physical-key displays so the most useful information remains visible without keeping Bambu Studio or a mobile app in the foreground.
+
+**BambuDeck is officially available on the Elgato Marketplace.**
 
 Version **1.2.0.0** introduces dedicated **Home**, **Print** and **AMS** profiles, built-in navigation, a much larger telemetry library and one of BambuDeck's signature features: **Print Preview**.
 
@@ -158,9 +170,17 @@ BambuDeck is designed around telemetry exposed by Bambu Lab printers and is inte
 
 ## Project status
 
-BambuDeck **v1.2.0.0** is the current Marketplace candidate build. The plugin has passed the Elgato CLI validation and packaging workflow and is being prepared for Marketplace review.
+BambuDeck **v1.2.0.0** is officially available on the **Elgato Marketplace**.
 
-This repository is the public technical showcase and documentation for BambuDeck. It does not publish the proprietary plugin source code.
+The current release includes dedicated **Home**, **Print** and **AMS** profiles, expanded live telemetry, local MQTT communication, FTPS-based Print Preview and real-hardware validation on a Bambu Lab P1S + AMS.
+
+<p align="center">
+  <a href="https://marketplace.elgato.com/product/bambudeck-1279275e-0239-488d-b7b3-cca63f8a4c7f">
+    <strong>Get BambuDeck on the Elgato Marketplace</strong>
+  </a>
+</p>
+
+This repository serves as the public technical showcase and documentation for BambuDeck. It does not publish the proprietary plugin source code.
 
 ## Documentation
 
