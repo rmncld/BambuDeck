@@ -8,7 +8,7 @@
 
 <p align="center">
   <a href="https://marketplace.elgato.com/product/bambudeck-1279275e-0239-488d-b7b3-cca63f8a4c7f">
-    <img src="./assets/badges/get-it-on-marketplace.svg" alt="Get it on Marketplace" height="48">
+    <img src="./assets/badges/elgato-marketplace.svg" alt="Get it on Marketplace" height="48">
   </a>
   &nbsp;&nbsp;
   <a href="https://www.elgato.com/stream-deck">
