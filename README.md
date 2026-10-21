@@ -53,7 +53,7 @@ The image above is a presentation assembled from plugin visuals, a P1S camera im
   <img src="./assets/bambudeck-demo-final.gif" alt="Real P1S and AMS telemetry displayed on Stream Deck during a print" width="560">
 </p>
 
-Recorded on a **Bambu Lab P1S + AMS**: printer state, print progress, temperatures, fans, speed mode and active filament tray. This real-hardware demonstration documents the established monitoring features; it is not a recording of every change in v1.2.5.
+Recorded on a **Bambu Lab P1S + AMS**: printer state, print progress, temperatures, fans, speed mode and active filament tray. This real-hardware demonstration documents the established monitoring features; it is not a complete v1.3.0 validation recording.
 
 ## Print Preview — the model on the key
 
