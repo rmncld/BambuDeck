@@ -17,7 +17,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Version-1.2.0.0-4ADE80?style=for-the-badge" alt="Version 1.2.0.0">
+  <img src="https://img.shields.io/badge/Version-1.3.0-4ADE80?style=for-the-badge" alt="BambuDeck version 1.3.0">
   <img src="https://img.shields.io/badge/Tested-P1S_%2B_AMS-63E6FF?style=for-the-badge" alt="Tested with P1S and AMS">
   <img src="https://img.shields.io/badge/Connection-Local_MQTT_%2B_FTPS-334155?style=for-the-badge" alt="Local MQTT and FTPS">
 </p>
@@ -26,11 +26,34 @@
 
 BambuDeck is an independent Stream Deck integration for Bambu Lab printers. It turns live printer, print-job and AMS information into compact physical-key displays so the most useful information remains visible without keeping Bambu Studio or a mobile app in the foreground.
 
-**BambuDeck is officially available on the Elgato Marketplace.**
+**Approved and listed on the [Elgato Marketplace](https://marketplace.elgato.com/product/bambudeck-1279275e-0239-488d-b7b3-cca63f8a4c7f).**
 
-Version **1.2.0.0** introduces dedicated **Home**, **Print** and **AMS** profiles, built-in navigation, a much larger telemetry library and one of BambuDeck's signature features: **Print Preview**.
+**This showcase presents BambuDeck v1.3.0.** The Marketplace page still lists **v1.2.5** (8 October 2026), for **Windows** and **Stream Deck 7.1 or later**, as checked on 21 October 2026. Version 1.3.0 is not yet shown as available there. Install the published plugin through Marketplace.
+
+The **v1.2** feature set introduced dedicated **Home**, **Print** and **AMS** profiles, built-in navigation, a much larger telemetry library and one of BambuDeck's signature features: **Print Preview**.
 
 > **Safety scope:** BambuDeck is monitoring-first. The only printer command currently implemented is chamber-light ON/OFF. Print controls, temperature controls, fan controls and motion commands are not part of this release.
+
+## New in v1.3.0
+
+<p align="center">
+  <img src="./assets/v130-new-features.png" alt="BambuDeck 1.3.0 overview: P1S camera preview, updated AMS spool graphics and BambuBuddy animation preview" width="960">
+</p>
+
+- **P1S camera:** automatically refreshed local camera images on a Stream Deck key. The P1S connection has been checked on real hardware; other camera models remain experimental.
+- **Clearer keys and AMS spools:** aligned value sizes, units and visual accents, plus updated filament spool graphics and active-slot highlighting.
+- **Multi-plate Print Preview:** selects the current plate rather than defaulting to the first plate, with improved archive detection and a loading state.
+- **BambuBuddy animation preview:** a printer-state mascot with ready, printing, paused, finished, error and offline animations. Software checks are complete; physical Stream Deck rendering and perceived animation smoothness still require user verification.
+
+The image above is a presentation assembled from plugin visuals, a P1S camera image and demo filament colors. It is not a photograph of the complete v1.3.0 layout running on a physical Stream Deck. See [visual provenance and validation scope](./docs/VISUAL-ASSETS.md).
+
+## See BambuDeck in action
+
+<p align="center">
+  <img src="./assets/bambudeck-demo-final.gif" alt="Real P1S and AMS telemetry displayed on Stream Deck during a print" width="560">
+</p>
+
+Recorded on a **Bambu Lab P1S + AMS**: printer state, print progress, temperatures, fans, speed mode and active filament tray. This real-hardware demonstration documents the established monitoring features; it is not a recording of every change in v1.2.5.
 
 ## Print Preview — the model on the key
 
@@ -79,7 +102,7 @@ The setup panel exposes clear configuration states such as **READY**, while publ
 
 The same local printer connection is shared by the detailed telemetry actions. Print Preview additionally uses the same local printer address/access information for its read-only FTPS retrieval.
 
-## Current feature set
+## Established monitoring feature set
 
 | Area | Action / information | Direction |
 | --- | --- | --- |
@@ -120,12 +143,6 @@ BambuDeck is tested on real hardware, not only with simulated telemetry.
 | Ready | Printing · 29% | Printing · 35% |
 | :---: | :---: | :---: |
 | <img src="./assets/state-ready.jpg" alt="BambuDeck ready state on a real Stream Deck" width="280"> | <img src="./assets/state-printing-29.jpg" alt="BambuDeck showing print progress and live fan values" width="280"> | <img src="./assets/state-printing-35.jpg" alt="BambuDeck showing print progress and active AMS slot" width="280"> |
-
-### Animated demonstration
-
-<img src="./assets/bambudeck-demo-final.gif" alt="BambuDeck animated real-hardware demonstration" width="560">
-
-The demonstration shows live printer state, progress, temperatures, fan values, speed mode, AMS colors and active-tray changes during a real P1S + AMS print.
 
 ## Dynamic visual language
 
@@ -170,7 +187,9 @@ BambuDeck is designed around telemetry exposed by Bambu Lab printers and is inte
 
 ## Project status
 
-BambuDeck **v1.2.0.0** is officially available on the **Elgato Marketplace**.
+BambuDeck is approved and listed on the **Elgato Marketplace**, where the current listed version is **1.2.5** (checked 21 October 2026).
+
+BambuDeck has received several updates with improvements and new features. The **v1.3.0** presentation above distinguishes real P1S checks from animation previews and experimental camera support. It does not imply that v1.3.0 has been approved or released on Marketplace.
 
 The current release includes dedicated **Home**, **Print** and **AMS** profiles, expanded live telemetry, local MQTT communication, FTPS-based Print Preview and real-hardware validation on a Bambu Lab P1S + AMS.
 
@@ -183,6 +202,8 @@ The current release includes dedicated **Home**, **Print** and **AMS** profiles,
 This repository serves as the public technical showcase and documentation for BambuDeck. It does not publish the proprietary plugin source code.
 
 ## Documentation
+
+- [Public visual assets and their scope](./docs/VISUAL-ASSETS.md)
 
 - [Detailed feature behaviour](./docs/FEATURES.md)
 - [Technical architecture](./docs/ARCHITECTURE.md)
